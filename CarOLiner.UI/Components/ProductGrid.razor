@@ -1,0 +1,22 @@
+﻿@using CarOLiner.Shared.ResponseModels
+
+<DataGrid     
+   TItem="ProductResponse"
+   Data="@ProductsResponses"
+   Filterable
+   Responsive
+   ShowPager
+   PageSize="10"
+>
+
+   <DataGridColumns>  
+       
+      <DataGridCommandColumn TItem="ProductResponse" NewCommandAllowed="false" DeleteCommandAllowed="false" ClearFilterCommandAllowed="false" >
+          
+      </DataGridCommandColumn>
+          
+        <DataGridColumn TItem="ProductResponse" Field="@nameof(ProductResponse.ProductName)" Caption="Product Name" Sortable="true" Filterable="true" Editable/>          
+           
+   </DataGridColumns>
+     
+</DataGrid>
