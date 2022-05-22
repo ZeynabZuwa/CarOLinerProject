@@ -23,8 +23,4 @@
     <ProjectReference Include="..\CarOLiner.Shared\CarOLiner.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
-
 </Project>
