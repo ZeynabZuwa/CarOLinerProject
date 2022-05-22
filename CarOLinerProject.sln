@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarOLiner.UI", "CarOLiner.UI\CarOLiner.UI.csproj", "{85049F2F-7694-4A30-89D7-D7C5CE34B799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarOLiner.Shared", "CarOLiner.Shared\CarOLiner.Shared.csproj", "{8F3CB96F-C00C-4E98-9596-8F3199C1AF1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarOLiner.Data", "CarOLiner.Data\CarOLiner.Data.csproj", "{34DE781F-2B93-4474-8F73-53324C612EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarOLiner.Services", "CarOLiner.Services\CarOLiner.Services.csproj", "{E7B54EC4-2E96-41A6-A5EF-B0A4055C19E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarOLiner.Api", "CarOLiner.Api\CarOLiner.Api.csproj", "{D0D6ADD0-4A77-4435-B09D-19D25CCADF25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85049F2F-7694-4A30-89D7-D7C5CE34B799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85049F2F-7694-4A30-89D7-D7C5CE34B799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85049F2F-7694-4A30-89D7-D7C5CE34B799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85049F2F-7694-4A30-89D7-D7C5CE34B799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3CB96F-C00C-4E98-9596-8F3199C1AF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3CB96F-C00C-4E98-9596-8F3199C1AF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3CB96F-C00C-4E98-9596-8F3199C1AF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3CB96F-C00C-4E98-9596-8F3199C1AF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DE781F-2B93-4474-8F73-53324C612EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DE781F-2B93-4474-8F73-53324C612EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DE781F-2B93-4474-8F73-53324C612EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DE781F-2B93-4474-8F73-53324C612EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B54EC4-2E96-41A6-A5EF-B0A4055C19E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B54EC4-2E96-41A6-A5EF-B0A4055C19E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B54EC4-2E96-41A6-A5EF-B0A4055C19E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B54EC4-2E96-41A6-A5EF-B0A4055C19E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D6ADD0-4A77-4435-B09D-19D25CCADF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D6ADD0-4A77-4435-B09D-19D25CCADF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D6ADD0-4A77-4435-B09D-19D25CCADF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D6ADD0-4A77-4435-B09D-19D25CCADF25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D813C0BF-E389-450F-9200-B21558F5D6A5}
+	EndGlobalSection
+EndGlobal
