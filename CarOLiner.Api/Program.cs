@@ -1,14 +1,17 @@
 using CarOLiner.Data;
+using CarOLiner.Services;
 using Microsoft.EntityFrameworkCore;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+ConfigurationManager _configuration = builder.Configuration;
+
 // Add services to the container.
 
 
-
+builder.Services.AddServices(_configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

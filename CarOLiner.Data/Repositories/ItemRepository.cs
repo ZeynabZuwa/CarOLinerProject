@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CarOLiner.Data.Repositories
 {
-    public class ItemRepository : IItemRepository
+    public class ItemRepository : BaseRepository<Item>, IItemRepository
     {
         private readonly CarOLineDbContext _carOLineDbContext;
 
-        public ItemRepository(CarOLineDbContext carOLineDbContext)
+        public ItemRepository(CarOLineDbContext carOLineDbContext) : base(carOLineDbContext)
         {
             _carOLineDbContext = carOLineDbContext;
         }

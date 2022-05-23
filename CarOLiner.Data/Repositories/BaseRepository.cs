@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarOLiner.Shared.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarOLiner.Data.Repositories
 {
-    public class BaseRepository<T>
+    public class BaseRepository<T> : IAsyncRepository<T> where T : class
     {
         /// <summary>
         /// General Db functions for all classes

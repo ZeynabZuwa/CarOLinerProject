@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CarOLiner.Data.Repositories
 {
-    public class VariantRepository : IVariantRepository
+    public class VariantRepository : BaseRepository<Variant>, IVariantRepository
     {
         private readonly CarOLineDbContext _carOLineDbContext;
 
-        public VariantRepository(CarOLineDbContext carOLineDbContext)
+        public VariantRepository(CarOLineDbContext carOLineDbContext) : base(carOLineDbContext)
         {
             _carOLineDbContext = carOLineDbContext;
         }

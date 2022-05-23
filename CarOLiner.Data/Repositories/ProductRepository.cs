@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace CarOLiner.Data.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         private readonly CarOLineDbContext _carOLineDbContext;
-        public ProductRepository(CarOLineDbContext carOLineDbContext) /*: base(carOLineDbContext)*/
+        public ProductRepository(CarOLineDbContext carOLineDbContext) : base(carOLineDbContext)
         {
             _carOLineDbContext = carOLineDbContext;
         }
