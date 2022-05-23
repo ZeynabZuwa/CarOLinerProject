@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarOLiner.Shared.IRepositories
 {
-    public interface IProductRepository
+    public interface IProductRepository : IAsyncRepository<Product>
     {
         Task<List<Product>> GetAllProductsAsync();
         Task<Product> GetProductIdAsync(Guid productId);

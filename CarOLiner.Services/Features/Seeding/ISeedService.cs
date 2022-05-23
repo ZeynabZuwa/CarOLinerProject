@@ -8,5 +8,6 @@ namespace CarOLiner.Services.Features.Seeding
 {
     public interface ISeedService
     {
+        Task SeedDatabaseAsync();
     }
 }
