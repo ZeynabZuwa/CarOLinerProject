@@ -25,7 +25,7 @@ namespace CarOLiner.Services.Features.Seeding
                 ProductName = "Dress",
                 Items = new List<Item>()
             };
-            var DressItem = new List<Item>();
+            var DressItems = new List<Item>();
 
             var DressItemRed = new Item()
             {
@@ -40,11 +40,70 @@ namespace CarOLiner.Services.Features.Seeding
                 {
                     VariantId = Guid.NewGuid(),
                     Size = "S",
-                    ItemId = 
+                    ItemId = DressItemRed.ItemId
+
+                },
+                   new Variant()
+                {
+                    VariantId = Guid.NewGuid(),
+                    Size = "M",
+                    ItemId = DressItemRed.ItemId
+
+                },
+                   new Variant()
+                {
+                    VariantId = Guid.NewGuid(),
+                    Size = "L",
+                    ItemId = DressItemRed.ItemId
 
                 }
-            }
-            
+            };
+
+
+            var DressItemGreen = new Item()
+            {
+                ItemId = Guid.NewGuid(),
+                ColorName = "Green",
+                ProductId = Dress.ProductId
+            };
+
+            var DressItemGreenVariants = new List<Variant>()
+            {
+                new Variant()
+                {
+                    VariantId = Guid.NewGuid(),
+                    Size = "S",
+                    ItemId = DressItemGreen.ItemId
+
+                },
+                   new Variant()
+                {
+                    VariantId = Guid.NewGuid(),
+                    Size = "M",
+                    ItemId = DressItemGreen.ItemId
+
+                },
+                   new Variant()
+                {
+                    VariantId = Guid.NewGuid(),
+                    Size = "L",
+                    ItemId = DressItemGreen.ItemId
+
+                }
+            };
+
+            DressItemGreen.Variants.AddRange(DressItemGreenVariants);
+            DressItemRed.Variants.AddRange(DressItemRedVariants);
+
+            DressItems.Add(DressItemGreen);
+            DressItems.Add(DressItemRed);
+
+            Dress.Items.AddRange(DressItems);
+
+            await _productRepository.AddAsync(Dress);
+
+
+
 
 
         }

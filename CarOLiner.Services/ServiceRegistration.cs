@@ -1,4 +1,10 @@
 ﻿using CarOLiner.Data;
+using CarOLiner.Data.Repositories;
+using CarOLiner.Services.Features.Items;
+using CarOLiner.Services.Features.Products;
+using CarOLiner.Services.Features.Seeding;
+using CarOLiner.Services.Features.Variants;
+using CarOLiner.Shared.IRepositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,17 +20,20 @@ namespace CarOLiner.Services
     {
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
-            ////Product Services
-            //services.AddScoped<IOrderRepository, OrderRepository>();
-            //services.AddScoped<IOrderService, OrderService>();
+            //Product Services
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
 
-            ////Item Services
-            //services.AddScoped<IOrderRepository, OrderRepository>();
-            //services.AddScoped<IOrderService, OrderService>();
+            //Item Services
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IItemService, ItemService>();
 
-            ////Variant Services
-            //services.AddScoped<IOrderRepository, OrderRepository>();
-            //services.AddScoped<IOrderService, OrderService>();
+            //Variant Services
+            services.AddScoped<IVariantRepository, VariantRepository>();
+            services.AddScoped<IVariantService, VariantService>();
+
+            // Seed Service
+            services.AddScoped<ISeedService, SeedService>();
 
             //Mapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
