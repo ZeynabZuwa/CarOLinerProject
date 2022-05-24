@@ -16,12 +16,7 @@ ConfigurationManager _configuration = builder.Configuration;
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddBlazorise(options =>
-    {
-        options.Immediate = true;
-    })
-    .AddBootstrapProviders()
-    .AddFontAwesomeIcons();
+
 
 var apiUrl = new Uri("https://localhost:7071/");
 builder.Services.AddHttpClient<IProductDataService, ProductDataService>(client =>
@@ -38,6 +33,13 @@ builder.Services.AddHttpClient<IVariantDataService, VariantDataService>(client =
 {
     client.BaseAddress = apiUrl;
 });
+
+builder.Services.AddBlazorise(options =>
+{
+    options.Immediate = true;
+})
+    .AddBootstrapProviders()
+    .AddFontAwesomeIcons();
 
 var app = builder.Build();
 

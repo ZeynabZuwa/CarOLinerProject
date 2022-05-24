@@ -1,6 +1,7 @@
 ﻿using CarOLiner.Shared.IRepositories;
 using CarOLiner.Shared.ResponseModels;
 using System.Net.Http;
+using System.Text.Json;
 
 namespace CarOLiner.UI.Data.Products
 {
@@ -19,11 +20,18 @@ namespace CarOLiner.UI.Data.Products
         // Metod för att skjuta mot API 
         public async Task<List<ProductResponse>> GetAllProductsAsync() 
         {
+
+
             // Hittar product routen i API:et
-            var product = await _httpClient.GetAsync("Product");
+            var product = await _httpClient.GetAsync("product");
             // översätter allt från Jsonfilen till en List med ProductResponses
-            return await product.Content.ReadFromJsonAsync<List<ProductResponse>>(); 
+            var test = await product.Content.ReadFromJsonAsync<List<ProductResponse>>();
+            return test;
+
+
 
         }
+
+        
     }
 }

@@ -11,7 +11,6 @@ namespace CarOLiner.Shared.ResponseModels
         public Guid ItemId { get; set; }
         public string ColorName { get; set; }
         public Guid ProductId { get; set; }
-        public ProductResponse Product { get; set; }
         // one to many relation with variants
         public List<VariantResponse> Variants { get; set; }
     }
