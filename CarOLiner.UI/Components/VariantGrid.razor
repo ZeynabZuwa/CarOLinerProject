@@ -1,5 +1,24 @@
-﻿<h3>VariantGrid</h3>
+﻿@using CarOLiner.Shared.ResponseModels
 
-@code {
+<DataGrid     
+   TItem="VariantResponse"
+   Data="@Variants"
+   @bind-SelectedRow = "@selectedVariant"
+   Filterable
+   Responsive
+   
+   
+>
 
-}
+   <DataGridColumns>  
+       
+      <DataGridCommandColumn TItem="VariantResponse" NewCommandAllowed="false" DeleteCommandAllowed="false" ClearFilterCommandAllowed="false" >
+          
+      </DataGridCommandColumn>
+          
+        <DataGridColumn TItem="VariantResponse" Field="@nameof(VariantResponse.Size)" Caption="Size" Sortable="true" Filterable="true" Editable/>          
+           
+   </DataGridColumns>
+
+     
+</DataGrid>

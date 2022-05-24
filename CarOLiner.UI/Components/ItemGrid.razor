@@ -1,5 +1,31 @@
-﻿<h3>ItemGrid</h3>
+﻿@using CarOLiner.Shared.ResponseModels
 
-@code {
 
-}
+<DataGrid     
+   TItem="ItemResponse"
+   Data="@Items"
+   @bind-SelectedRow = "@selectedItem"
+   Filterable
+   Responsive
+   DetailRowTrigger = "@((item)=> item.Item.Variants != null && item.Item.Variants.Count > 0 && item.Item.ItemId == selectedItem?.ItemId)"
+   
+>
+
+   <DataGridColumns>  
+       
+      <DataGridCommandColumn TItem="ItemResponse" NewCommandAllowed="false" DeleteCommandAllowed="false" ClearFilterCommandAllowed="false" >
+          
+      </DataGridCommandColumn>
+          
+        <DataGridColumn TItem="ItemResponse" Field="@nameof(ItemResponse.ColorName)" Caption="Color" Sortable="true" Filterable="true" Editable/>          
+           
+   </DataGridColumns>
+
+   <DetailRowTemplate>
+       @{
+           var variants = (context as ItemResponse).Variants;
+           <VariantGrid @ref="VariantGrid" Variants="@variants"></VariantGrid>
+        }
+   </DetailRowTemplate>
+     
+</DataGrid>

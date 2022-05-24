@@ -35,9 +35,6 @@ namespace CarOLiner.Services
             // Seed Service
             services.AddScoped<ISeedService, SeedService>();
 
-            ////Base Service
-            //services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-
             //Mapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

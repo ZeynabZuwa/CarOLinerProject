@@ -10,7 +10,8 @@ namespace CarOLiner.UI.Components
         public IProductDataService ProductDataService { get; set; }
 
         [Parameter]
-        public List<ProductResponse> ProductsResponses { get; set; }
+        public List<ProductResponse> ProductResponses { get; set; }
+
         private ProductResponse selectedProduct { get; set; }
 
         private ItemGrid ItemGrid { get; set; }

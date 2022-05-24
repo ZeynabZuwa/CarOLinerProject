@@ -2,11 +2,12 @@
 
 <DataGrid     
    TItem="ProductResponse"
-   Data="@ProductsResponses"
+   Data="@ProductResponses"
+   @bind-SelectedRow = "@selectedProduct"
    Filterable
    Responsive
-   ShowPager
-   PageSize="10"
+   DetailRowTrigger ="@((product)=>product.Item.Items.Count > 0 && product.Item.ProductId == selectedProduct?.ProductId)"
+   
 >
 
    <DataGridColumns>  
@@ -18,6 +19,14 @@
         <DataGridColumn TItem="ProductResponse" Field="@nameof(ProductResponse.ProductName)" Caption="Product Name" Sortable="true" Filterable="true" Editable/>          
            
    </DataGridColumns>
+
+   <DetailRowTemplate>
+       @{
+           var items = (context as ProductResponse).Items;
+           <ItemGrid @ref="ItemGrid" Items="@items"> </ItemGrid>
+
+        }
+   </DetailRowTemplate>
      
 </DataGrid>
 
