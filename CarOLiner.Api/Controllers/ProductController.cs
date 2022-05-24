@@ -17,6 +17,7 @@ namespace CarOLiner.Api.Controllers
             _productService = productService;
         }
 
+
         [HttpGet]
         public async Task<ActionResult<List<ProductResponse>>> GetAllProducts()
         {
@@ -32,7 +33,7 @@ namespace CarOLiner.Api.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{productId}")]
         public async Task<ActionResult<ProductResponse>> GetProductById(Guid productId)
         {
             // TODO: Return one specific product with Guid
@@ -44,6 +45,21 @@ namespace CarOLiner.Api.Controllers
             else
             {
                 return BadRequest(productResponses);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CreateProduct(ProductRequest productRequest)
+        {
+            // TODO: Add a product 
+            var productResponse = await _productService.CreateProduct(productRequest);
+            if (productResponse != null)
+            {
+                return Ok(productResponse);
+            }
+            else
+            {
+                return BadRequest(productResponse);
             }
         }
 
@@ -66,7 +82,7 @@ namespace CarOLiner.Api.Controllers
         public async Task<ActionResult> DeleteProductById(Guid productId)
         {
             // TODO: Delete one specific product with Guid
-            var productResponses = await _productService.GetProductById(productId);
+            var productResponses = await _productService.DeleteProduct(productId);
             if (productResponses != null)
             {
                 return Ok(productResponses);
@@ -77,6 +93,6 @@ namespace CarOLiner.Api.Controllers
             }
         }
 
-    
+
     }
 }

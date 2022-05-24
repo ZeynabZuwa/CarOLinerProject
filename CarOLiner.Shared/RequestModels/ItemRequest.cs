@@ -11,7 +11,6 @@ namespace CarOLiner.Shared.RequestModels
         public Guid ItemId { get; set; }
         public string ColorName { get; set; }
         public Guid ProductId { get; set; }
-        public ProductRequest Product { get; set; }
         // one to many relation with variants
         public List<VariantRequest> Variants { get; set; }
     }
