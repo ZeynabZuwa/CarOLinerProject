@@ -12,5 +12,11 @@ namespace CarOLiner.UI.Pages.Products
 
         public List<ProductResponse> Products { get; set; }
         private ProductGrid ProductGrid { get; set; }
+
+
+        protected override async Task OnInitializedAsync()
+        {
+            Products = await ProductDataService.GetAllProductsAsync();
+        }
     }
 }

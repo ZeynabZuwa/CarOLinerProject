@@ -1,23 +1,28 @@
 ﻿using CarOLiner.Shared.IRepositories;
 using CarOLiner.Shared.ResponseModels;
+using System.Net.Http;
 
 namespace CarOLiner.UI.Data.Products
 {
     public class ProductDataService : IProductDataService
     {
         private readonly HttpClient _httpClient;
-        private readonly IProductRepository _productRepository;
 
-        public ProductDataService(HttpClient httpClient, IProductRepository productRepository)
+        public ProductDataService(HttpClient httpClient)
         {
-            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient)); 
-            _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
+            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         }
 
-        public async Task<List<ProductResponse>> GetAllProducts()
+
+
+
+        // Metod för att skjuta mot API 
+        public async Task<List<ProductResponse>> GetAllProductsAsync() 
         {
-            var product = await _httpClient.GetAsync("Products");
-            return await product.Content.ReadFromJsonAsync<List<ProductResponse>>();
+            // Hittar product routen i API:et
+            var product = await _httpClient.GetAsync("Product");
+            // översätter allt från Jsonfilen till en List med ProductResponses
+            return await product.Content.ReadFromJsonAsync<List<ProductResponse>>(); 
 
         }
     }

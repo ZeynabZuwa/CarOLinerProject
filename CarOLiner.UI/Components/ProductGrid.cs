@@ -11,6 +11,7 @@ namespace CarOLiner.UI.Components
 
         [Parameter]
         public List<ProductResponse> ProductsResponses { get; set; }
+        private ProductResponse selectedProduct { get; set; }
 
         private ItemGrid ItemGrid { get; set; }
     }
