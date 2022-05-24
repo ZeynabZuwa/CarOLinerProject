@@ -12,7 +12,9 @@ namespace CarOLiner.Services.Features.Products
     {
         Task<List<ProductResponse>> GetAllProducts();
         Task<ProductResponse> GetProductById(Guid productId);
-        Task<ProductResponse> DeleteProduct(Guid productId);
+        Task<ProductResponse> CreateProduct(ProductRequest productRequest);
         Task<ProductResponse> UpdateProduct(ProductRequest productRequest);
+        Task<ProductResponse> DeleteProduct(Guid productId);
+        
     }
 }

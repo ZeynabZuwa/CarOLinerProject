@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarOLiner.Shared.IRepositories;
+using CarOLiner.Shared.Models;
 using CarOLiner.Shared.RequestModels;
 using CarOLiner.Shared.ResponseModels;
 using System;
@@ -36,6 +37,33 @@ namespace CarOLiner.Services.Features.Products
             return productResponse;
         }
 
+        public async Task<ProductResponse> CreateProduct(ProductRequest productRequest)
+        {
+            var product = new Product()
+            {
+                ProductName = productRequest.ProductName,
+                Items = _mapper.Map<List<Item>>(productRequest.Items)
+            };
+            
+            await _productRepository.AddAsync(product);
+            
+            return _mapper.Map<ProductResponse>(product);
+        }
+
+
+        public async Task<ProductResponse> UpdateProduct(ProductRequest productRequest)
+        {
+            var productFromDb = await _productRepository.GetByIdAsync(productRequest.ProductId);
+
+            if (productFromDb != null)
+            {
+                productFromDb.ProductName = productRequest.ProductName;
+                await _productRepository.UpdateAsync(productFromDb);
+            }
+            return _mapper.Map<ProductResponse>(productRequest);
+
+        }
+
         public async Task<ProductResponse> DeleteProduct(Guid productId)
         {
             var product = await _productRepository.GetByIdAsync(productId);
@@ -44,17 +72,6 @@ namespace CarOLiner.Services.Features.Products
             return productResponse;
         }
 
-        public async Task<ProductResponse> UpdateProduct(ProductRequest productRequest)
-        {
-            var productFromDb = await _productRepository.GetByIdAsync(productRequest.ProductId);
 
-            if(productFromDb != null)
-            {
-                productFromDb.ProductName = productRequest.ProductName;
-                await _productRepository.UpdateAsync(productFromDb);
-            }
-            return _mapper.Map<ProductResponse>(productRequest);
-
-        }
     }
 }

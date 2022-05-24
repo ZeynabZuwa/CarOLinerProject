@@ -32,7 +32,7 @@ namespace CarOLiner.Api.Controllers
             }
         }
 
-        [HttpGet("{}")]
+        [HttpGet]
         public async Task<ActionResult<ProductResponse>> GetProductById(Guid productId)
         {
             // TODO: Return one specific product with Guid
@@ -47,7 +47,7 @@ namespace CarOLiner.Api.Controllers
             }
         }
 
-        [HttpPut("{}")]
+        [HttpPut]
         public async Task<ActionResult> UpdateProduct(ProductRequest productRequest)
         {
             // TODO: Delete one specific product with Guid
@@ -62,7 +62,7 @@ namespace CarOLiner.Api.Controllers
             }
         }
 
-        [HttpDelete("{productId}")]
+        [HttpDelete]
         public async Task<ActionResult> DeleteProductById(Guid productId)
         {
             // TODO: Delete one specific product with Guid
