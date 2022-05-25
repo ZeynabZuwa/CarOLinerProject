@@ -7,6 +7,8 @@
    Filterable
    Responsive
    DetailRowTrigger ="@((product)=>product.Item.Items.Count > 0 && product.Item.ProductId == selectedProduct?.ProductId)"
+   ShowPager
+   PageSize="10"
    
 >
 
@@ -16,7 +18,7 @@
           
       </DataGridCommandColumn>
           
-        <DataGridColumn TItem="ProductResponse" Field="@nameof(ProductResponse.ProductName)" Caption="Product Name" Sortable="true" Filterable="false" Editable/>          
+        <DataGridColumn TItem="ProductResponse" Field="@nameof(ProductResponse.ProductName)" Caption="Product" Sortable="true" Filterable="false" Editable/>          
            
    </DataGridColumns>
 

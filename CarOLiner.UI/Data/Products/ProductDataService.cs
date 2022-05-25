@@ -25,8 +25,7 @@ namespace CarOLiner.UI.Data.Products
             // Hittar product routen i API:et
             var product = await _httpClient.GetAsync("product");
             // översätter allt från Jsonfilen till en List med ProductResponses
-            var test = await product.Content.ReadFromJsonAsync<List<ProductResponse>>();
-            return test;
+            return await product.Content.ReadFromJsonAsync<List<ProductResponse>>(); 
 
 
 
