@@ -6,7 +6,7 @@ I made a Blazor Project with Entity Framework Core
 
 #### Prerequisities
 If you want to clone this repository you will need to have 2 things installed on your computer first:
-* Visual Studio or Visual Studio Code
+* Visual Studio 
 * SQL Server 
 
 
